@@ -12,6 +12,7 @@ canvas.height = canvasHeight;
 canvas.width = canvasWidth;
 let context = canvas.getContext("2d");
 
+
 // SpriteSheet Setup
 let columns = 8;
 let rows = 2;
@@ -23,7 +24,7 @@ let boyWidth = spritesheetWidth / columns;
 let boy = new Image();
 boy.src = "boy.png";
 let x = 0;
-let y = 0;
+let y = boyHeight;
 let movingBoyX = 0;
 let movingBoyY = boyHeight;
 let speed = 50;
@@ -63,7 +64,7 @@ move = direction => {
       movingBoyX = movingBoyX + speed;
     }
   } else {
-    if (movingBoyX < 0) {
+    if (movingBoyX < 2*boyWidth) {
       context.clearRect(movingBoyX - speed, movingBoyY, boyWidth, boyHeight);
       currentDirection = directions.right;
       boyY = 0;
@@ -111,7 +112,7 @@ jog = direction => {
     boyX = (currentFrame % 8) * boyWidth;
     boyY = 0;
     currentFrame++;
-  } else {
+  } else {   
     context.clearRect(x, y, boyWidth, boyHeight);
     context.drawImage(
       boy,

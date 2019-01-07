@@ -1,0 +1,50 @@
+#runner{
+    width : 109.25px;
+    height: 140px;
+    background: url(boy.png);
+    animation : run 2s steps(8) infinite, slide 4s steps(100) infinite;
+}
+
+#jogger{
+    width : 109.25px;
+    height: 280px;
+    background: url(boy.png);
+    animation : run 2s steps(8) infinite;
+}
+
+#runnerLeft{
+    clip: rect(0px, 140px, 0px, 0px);
+    width : 109.25px;
+    height: 140px;
+    background: url(boy.png);
+    animation : runLeft 2s steps(8) infinite, slideLeft 8s steps(100) infinite;
+    margin-left: 100%;
+    background-position-y: 140px;
+
+}
+
+@keyframes run{
+    100% {
+        background-position-x: -864px;
+    }
+}
+
+
+@keyframes runLeft{
+    100% {
+        background-position-x: -864px;
+    }
+}
+
+@keyframes slide{
+    100% {
+        margin-left: 1000px
+    }
+}
+
+
+@keyframes slideLeft{
+    100% {
+        margin-left: -1000px;
+    }
+}
